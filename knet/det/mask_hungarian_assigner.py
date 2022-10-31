@@ -11,7 +11,7 @@ except ImportError:
     linear_sum_assignment = None
 
 
-@MATCH_COST.register_module()
+@MATCH_COST.register_module(force=True)
 class DiceCost(object):
     """DiceCost.
 
@@ -73,7 +73,7 @@ class DiceCost(object):
         return dice_cost * self.weight
 
 
-@MATCH_COST.register_module()
+@MATCH_COST.register_module(force=True)
 class MaskCost(object):
     """MaskCost.
 
@@ -110,7 +110,7 @@ class MaskCost(object):
         return cls_cost * self.weight
 
 
-@BBOX_ASSIGNERS.register_module()
+@BBOX_ASSIGNERS.register_module(force=True)
 class MaskHungarianAssigner(BaseAssigner):
     """Computes one-to-one matching between predictions and ground truth.
 

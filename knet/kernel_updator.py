@@ -4,7 +4,7 @@ from mmcv.cnn import build_activation_layer, build_norm_layer
 from mmcv.cnn.bricks.transformer import TRANSFORMER_LAYER
 
 
-@TRANSFORMER_LAYER.register_module()
+@TRANSFORMER_LAYER.register_module(force=True)
 class KernelUpdator(nn.Module):
 
     def __init__(self,
